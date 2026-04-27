@@ -7,10 +7,8 @@
  */
 function sumValues(num1, num2, add) {
     if (add) {
-        const result = num1 + num2;
-        return result;
-    }
-    else {
+        return num1 + num2;
+    } else {
         return false;
     }
 }
@@ -22,14 +20,15 @@ function sumValues(num1, num2, add) {
  */
 function discountPrices(prices, discount) {
     if (prices.length === 0) {
-        return false;
+        return []; // fix: return empty array instead of false
     }
-    const discounted = []
-    const length = prices.length;
-    for(let i = 0; i < length; i++) {
+
+    const discounted = [];
+    for (let i = 0; i < prices.length; i++) {
         const discountedPrice = prices[i] * (1 - discount);
         discounted.push(discountedPrice);
     }
+
     return discounted;
 }
 module.exports = {sumValues, discountPrices};
